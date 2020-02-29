@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<br>
+<div class="container">
+    <div class="bg-gray section pt-90 pb-30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="section-title text-center mb-80">
+                        <h2>Speed Dial</h2>
+                        <p>Top 12 Freequently Called Extensions/Offices.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for e in extension %}
+                <div class="col-lg-3 col-md-4 col-12 mb-30">
+                    <div class="feature-item">
+                        <a href="{% url 'incoming' %}"></a><img src="{% static 'images/phone.png'%}" width="80" alt="">
+                        <h4><small>{{e.code}}</small><br>{{e.name}}</h4>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+                <div class="col-lg-3 col-md-4 col-12 mb-30">
+                    <div class="feature-item">
+                        <img src="{% static 'images/phone.png'%}" width="80" alt="">
+                        <h4><small>6755</small><br> Symons(MD)</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

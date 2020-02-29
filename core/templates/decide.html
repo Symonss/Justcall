@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<div class="container">
+    <h3><a href="{% url 'admin_signup'%}">Admin</a></h3>
+    <h3><a href="{% url 'user_signup' %}">User</a></h3>
+</div>
+{% endblock body %}

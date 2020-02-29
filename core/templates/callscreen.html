@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+{% block phonecss %}
+<link rel="stylesheet" href="{% static 'css/screen.css'%}">
+{% endblock phonecss %}
+<div>
+
+</div>
+<audio controls autoplay loop style="width: 0px;">
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="{% static 'audio/tone.mp3' %}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<div class="card" style="background-color: rgba(0, 0, 0, 0.137);">
+    <div class="card-body text-center ">
+        <b style="color: red;">Outgoing Call <br> {{obj.name}} | {{obj.code}}</b>
+
+    </div>
+</div>
+<div class="container">
+
+    <div class="back-circle"></div>
+    <div class="button"></div>
+    <div class="front-circle"></div>
+    <i class="fa fa-phone phone"></i>
+</div>
+{% endblock body %}
